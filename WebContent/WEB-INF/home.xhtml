@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<title>Home</title>
+</h:head>
+<h:body>
+	<h:form>
+		<div align="center">
+			<h:panelGrid columns="2">
+				<p:outputLabel value="User:"
+					style="margin-left: 35%; color:#0B0B61; font-weight:bold" />
+				<br />
+				<p:inputText id="user" value="#{beanLogin.user.name}" />
+				<br />
+				<p:outputLabel value="Password:"
+					style="margin-left: 35%; color:#0B0B61; font-weight:bold" />
+				<br />
+				<p:inputText id="password" value="#{beanLogin.user.password}"
+					type="password" style="margin-bottom: 10px; margin-padin;" />
+				<br />
+
+			</h:panelGrid>
+		</div>
+		<div align="center">
+			<p:commandButton value="Enter" id="enter"
+				action="#{beanLogin.verifyUserLogin}"
+				style="background-color:#0B0B61; color:#F2F2F2;"
+				styleClass="ui-priority-primary" />
+			<br />
+			<p:button value="Sign in"
+				style="background-color:#0B0B61; color:#F2F2F2; margin-top: 5px;"
+				styleClass="ui-priority-primary" outcome="/signInUser.xhtml" />
+			<br />
+			<p:button value="Search"
+				style="background-color:#0B0B61; color:#F2F2F2; margin-top: 5px;"
+				styleClass="ui-priority-primary" outcome="/selectUser.xhtml" />
+		</div>
+		<div align="center">
+			<p:growl id="msg" style="background-color:#0B0B61; align-text:center" />
+		</div>
+	</h:form>
+</h:body>
+</html>

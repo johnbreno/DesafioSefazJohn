@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<title>Sign In</title>
+</h:head>
+<h:body>
+	<h:form>
+		<div align="center">
+			<h2 style="color: #0B0B61">User Registration</h2>
+			<h:panelGrid columns="4">
+				<br />
+				<p:outputLabel value="Name:" style="color:#0B0B61; font-weight:bold" />
+				<br />
+				<p:inputText id="name" maxlength="50"
+					value="#{beanUser.user.name}" />
+				<br />
+				<p:outputLabel value="Email:"
+					style="color:#0B0B61; font-weight:bold" />
+				<br />
+				<p:inputText maxlength="30" value="#{beanUser.user.email}" />
+				<br />
+				<p:outputLabel value="Password:"
+					style="color:#0B0B61; font-weight:bold" />
+				<br />
+				<p:inputText maxlength="25" value="#{beanUser.user.password}" />
+				<br />
+			</h:panelGrid>
+		</div>
+
+		<div align="center" style="margin-top: -15px">
+			<p:commandButton value="Save" id="save"
+				action="#{beanUser.insertUser}"
+				style="background-color:#0B0B61; color:#F2F2F2; margin-left: 3%;"
+				styleClass="ui-priority-primary" />
+
+			<p:button value="Back" id="back"
+				style="background-color:#0B0B61; color:#F2F2F2; margin-left: 10px;"
+				styleClass="ui-priority-primary" outcome="/home.xhtml" />
+		</div>
+
+		<div align="center">
+			<br />
+			<p:outputLabel id="msg" value="#{BeanUser.mensagem}"
+				style="color:#01DF01; font-weight:bold" />
+		</div>
+	</h:form>
+</h:body>
+</html>

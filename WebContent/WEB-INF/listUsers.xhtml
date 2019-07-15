@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<title>List Users</title>
+</h:head>
+<h:body>
+	<h:form>
+		<div align="center">
+			<p:commandButton value="List users" action="#{beanUser.listUser}"
+				style="background-color:#0B0B61; color:#F2F2F2;"
+				styleClass="ui-priority-primary" />
+		</div>
+
+		<div align="center" style="margin-top: 10px">
+			<p:dataTable var="user" value="#{beanUser.listUsers}" style="width:30%" align="center" 
+				id="idTable" >
+				<p:column headerText="Id">
+					<h:outputText value="#{user.id}}" />
+				</p:column>
+
+				<p:column headerText="Name">
+					<h:outputText value="#{user.nome}" />
+				</p:column>
+
+				<p:column headerText="E-mail">
+					<h:outputText value="#{user.email}" />
+				</p:column>
+
+				<p:column headerText="">
+					<p:commandButton value="Edit"
+						style="background-color:#0B0B61; color:#F2F2F2;"
+						styleClass="ui-priority-primary" />
+				</p:column>
+
+				<p:column headerText="">
+					<p:commandButton value="Delete"
+						style="background-color:#0B0B61; color:#F2F2F2;"
+						styleClass="ui-priority-primary" />
+				</p:column>
+			</p:dataTable>
+		</div>
+		<br />
+
+		<div align="center">
+			<p:button value="Back"
+				style="background-color:#0B0B61; color:#F2F2F2;"
+				styleClass="ui-priority-primary" outcome="/home.xhtml" />
+		</div>
+
+		<h:messages />
+	</h:form>
+</h:body>
+</html>
